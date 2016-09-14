@@ -1,13 +1,12 @@
 'use strict';
 
 const koa = require('koa');
+const tracer = require('koa-tracer');
+const controller = require('./controller');
 const app = koa();
 
-app.use(function *(){
-  console.log('incoming');
-  yield new Promise(resolve => setTimeout(resolve, 1000));
-  this.body = 'Hello World';
-});
+app.use(tracer());
+app.use(controller);
 
-app.listen(3000)
+app.listen(3000);
 console.log('Server is running on port 3000.');

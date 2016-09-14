@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "DEBUG=* node index.js",
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "dependencies": {
     "co": "^4.6.0",
     "co-request": "^1.0.0",
-    "koa": "^1.2.4"
+    "koa": "^1.2.4",
+    "koa-tracer": "git+https://git@github.com/gabor-balla-emarsys/koa-tracer.git"
   }
 }
